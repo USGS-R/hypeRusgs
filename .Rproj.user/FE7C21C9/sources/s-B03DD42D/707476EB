@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1527685555038.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "707476EB",
+    "lastKnownWriteTime" : 1527718094,
+    "last_content_update" : 1527718094142,
+    "path" : "D:/LRCData/R/nawqa_gw_training/Webinar-5-30-2018/R/clean_data.R",
+    "project_path" : "Webinar-5-30-2018/R/clean_data.R",
+    "properties" : {
+        "cursorPosition" : "105,50",
+        "scrollLine" : "81"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
