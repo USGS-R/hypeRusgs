@@ -1,0 +1,4 @@
+"agency_cd","site_no","site_tp_cd","lev_dt","lev_tm","lev_tz_cd","lev_va","sl_lev_va","sl_datum_cd","lev_status_cd","lev_agency_cd"
+"USGS","383107118375201","GW",1954-09-13,NA,"UTC",287,NA,NA,NA,NA
+"USGS","383107118375201","GW",1954-12-09,NA,"UTC",297.16,NA,NA,NA,"USGS"
+"USGS","383107118375201","GW",1957-10-21,NA,"UTC",300.63,NA,NA,NA,"USGS"

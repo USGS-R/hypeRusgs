@@ -1,0 +1,4 @@
+"agency_cd","site_no","site_tp_cd","lev_dt","lev_tm","lev_tz_cd_reported","lev_va","sl_lev_va","sl_datum_cd","lev_status_cd","lev_agency_cd","lev_dateTime","lev_tz_cd"
+"USGS","311642090113601","GW",1996-02-19,NA,"UTC",62.45,NA,NA,NA,NA,NA,"UTC"
+"USGS","311642090113601","GW",2013-05-29,"12:40","CDT",65.61,NA,NA,NA,"USGS",2013-05-29 17:40:00,"UTC"
+"USGS","311642090113601","GW",2013-06-25,"09:20","CDT",63.42,NA,NA,"R","USGS",2013-06-25 14:20:00,"UTC"

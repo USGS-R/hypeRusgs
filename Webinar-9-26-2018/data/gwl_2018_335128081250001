@@ -1,0 +1,2 @@
+"agency_cd","site_no","site_tp_cd","lev_dt","lev_tm","lev_tz_cd_reported","lev_va","sl_lev_va","sl_datum_cd","lev_status_cd","lev_agency_cd","lev_tz_cd"
+"USGS","335128081250001","GW",2006-01-01,"12:00","UTC",77,NA,NA,"A","USGS","UTC"
