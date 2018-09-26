@@ -4,8 +4,7 @@ library(plyr)
 library(reshape2)
 library(ggplot2)
 
-
-DFpests <- read.csv("Webinar-9-26-2018/data/pesticide_data.csv", sep=",", header=TRUE, na.strings=c(""))
+DFpests <- read.csv("Webinar-9-26-2018/data/pesticide_data.csv", stringsAsFactors = FALSE)
 DFpests[duplicated(DFpests$NAWQA_ID)] # confirm that the # of unique IDs same as # of observations
 #write.csv(testIDs, "output/testIDs.csv", row.names=F)
 #sapply(DFpests, class)
@@ -17,11 +16,12 @@ DFpests <- droplevels(DFpests) # removes the "glacbed" level
 
 # calculate hcode's for calculating detection frequencies at 
 # any concentration
-hcode <- mutate(DFpests, h65064=ifelse(is.na(R65064) & !is.na(P65064), 100,
-              ifelse(R65064=="<" & !is.na(P65064), 0,
-                     ifelse(is.na(P65064), NA, 100))),
-h65065=ifelse(is.na(R65065) & !is.na(P65065), 100,
-              ifelse(R65065=="<" & !is.na(P65065), 0,
+hcode <- mutate(DFpests, 
+                h65064=ifelse(is.na(R65064) & !is.na(P65064), 100,
+                              ifelse(R65064=="<" & !is.na(P65064), 0,
+                                     ifelse(is.na(P65064), NA, 100))),
+                h65065=ifelse(is.na(R65065) & !is.na(P65065), 100,
+                              ifelse(R65065=="<" & !is.na(P65065), 0,
                      ifelse(is.na(P65065), NA, 100))),
 h65066=ifelse(is.na(R65066) & !is.na(P65066), 100,
               ifelse(R65066=="<" & !is.na(P65066), 0,
