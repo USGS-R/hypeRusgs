@@ -8,7 +8,7 @@ pest_codes <- read.csv("Webinar-9-26-2018/data/pest_codes.csv",
                        colClasses = "character")
 
 DFpests <- read.csv("Webinar-9-26-2018/data/pesticide_data.csv", 
-                    sep=",", header=TRUE, na.strings=c(""))
+                    stringsAsFactors = FALSE)
 
 DFpests_unite <- DFpests
 for (c in pest_codes[[1]]) {
@@ -31,7 +31,7 @@ DFpests_gathered_sep <- DFpests_gathered %>%
 DFpests_hcode <- DFpests_gathered_sep %>% 
   mutate(h = case_when(
     is.na(R) & !is.na(P) ~ 100, # if there is not an R code but there is a value, use 100
-    R =="<" & !is.na(P_col) ~ 0, # if the value exists and is below detection limit, use 0
+    R =="<" & !is.na(P) ~ 0, # if the value exists and is below detection limit, use 0
     is.na(P) ~ as.numeric(NA), # otherwise use NA for no value, or 100 for an existing value
     TRUE ~ 100))
 

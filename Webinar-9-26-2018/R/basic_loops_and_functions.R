@@ -9,11 +9,7 @@ library(dplyr)
 # Load data that we will use
 DFpests <- read.csv("Webinar-9-26-2018/data/pesticide_data.csv", 
                     sep=",", header=TRUE, na.strings=c(""))
-# x <- DFpests
-# x <- select(x, -LAT, -LONG)
-# x <- x[, 1:100]
-# x <- sample_n(x, 500)
-# write.csv(x, "Webinar-9-26-2018/data/pesticide_data.csv", row.names = FALSE)
+
 # Looping ---------------------------------
 
 # for loops =================================
@@ -29,7 +25,13 @@ for(aqu in aquifers) {
   plot_data <- DFpests %>% 
     filter(PrincipalAquifer == aqu) %>% 
     select(DATES, P65065)
+  
+  # intermediate data frames (same as above but no pipes)
+  plot_data1 <- filter(DFpests, PrincipalAuqifer == aqu)
+  plot_data2 <- select(plot_data1, DATES, P65065)
+  
   plot(plot_data, main = aqu, sub = "Atrazine")
+  print(aqu) # useful for troubleshooting errors
 }
 
 # lapply, sapply =================================
@@ -53,12 +55,16 @@ lapply(1:10, function(x, constant) {
 # lapply example: read in multiple datasets
 
 # 1. Programmatically get file names
-avail_files <- list.files('Webinar-9-26-2018/data/', full.names = TRUE)
+avail_files <- list.files('Webinar-9-26-2018/data/', 
+                          full.names = TRUE)
 df_filenames <- avail_files[grep('gwl_2018', avail_files)]
 
 # 2. Use lapply to load in each data frame
 all_dfs_list <- lapply(df_filenames, function(fn) {
-  read.csv(fn, colClasses = c("site_no" = "character"), stringsAsFactors = FALSE)
+  read.csv(fn, 
+           colClasses = c("site_no" = "character"), 
+           stringsAsFactors = FALSE,
+           na.strings = c("", "NA"))
 })
 
 # 3. Now, use do.call and dplyr::bind_rows to get one dataframe
@@ -102,25 +108,32 @@ function_name(1,2)
 # Basic structure
 if (TRUE) { # or FALSE
   # do this
-} else {
+} else if (FALSE) {
   # do this code chunk
-}
+} 
 
 # You can put any logical statement in the parentheses. It just needs to evaluate
 #   to a single TRUE or FALSE value.
 
-# Example: You want to skip a step when your data has missing values.
+# Example: You want to skip a step when your data 
+#   has missing values.
 x <- DFpests$P65064
 
 # This would not work
 is.na(x) # returns more than one T/F value
 # This would work
 any(is.na(x)) # returns only one T/F value
+all(is.na(x))
+"x" == "x"
+"x" == c("x", "y") # gives you multiple T/F value
+"x" %in% c("x", "y") # gives you just one T/F value
 
-if(any(is.na(DFpests$P65064))) {
+if(any(is.na(DFpests$P65065))) {
   print("Dataset contains missing values. Moving to next step.")
+  lm.atrazine <- NULL
 } else {
   print("Executing model for this dataset.")
+  lm.atrazine <- lm() # won't work since we don't have args to lm()
 }
 
 # ifelse() =================================
@@ -132,7 +145,8 @@ x <- ifelse(TRUE, yes = 6, no = NA)
 y <- ifelse(FALSE, yes = 6, no = NA)
 
 # Use with dplyr::mutate
-DFpests_newcol <- DFpests %>% 
+DFpests <- DFpests_raw
+DFpests <- DFpests %>% 
   mutate(new_col = ifelse(!is.na(R65064),
                           yes = "Below Detection Limit",
                           no = NA))
