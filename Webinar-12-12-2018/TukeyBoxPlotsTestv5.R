@@ -1,6 +1,3 @@
-rm(list=ls())  ## remove old objects
-if(!is.null(dev.list())) dev.off()  ## clear old plots
-
 library(dplyr)
 library(ggplot2)
 library(data.table)
