@@ -14,7 +14,7 @@ ui <- fluidPage(
   
   # Code for populating tabs with wdigets and info
   navbarPage(
-    title = "USGS GW Example App",
+    title = "USGS Example App",
     tabPanel(
       "Select Data and Plot",
       sidebarLayout(

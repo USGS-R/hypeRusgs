@@ -83,7 +83,7 @@ toxEval::explore_endpoints()
 I used a custom theme through the `shinythemes` package. In my UI function, I loaded the `shinythemes` package and added the argument `theme = shinytheme("yeti")`. You can find additional theme options through `shinytheme` [here](http://rstudio.github.io/shinythemes/). 
 
 ```
-runApp("Webinar-2-27-2019/3_shiny_usgs_gw")
+runApp("Webinar-2-27-2019/3_shiny_usgs")
 ```
 
 ### Hosting apps
@@ -96,6 +96,8 @@ Our recommendation is to not build shiny apps for use-cases that will be meant f
 * Shinyapps.io: http://www.shinyapps.io/
 * RStudio Connect (not familiar with this)
 * Start from a local RStudio session
+
+Another interesting data exploration tool that is completely unrelated to R is Tableau. CHS has a contract for hosting Tableau apps.
 
 ### Interactive documents
 
