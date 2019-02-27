@@ -7,7 +7,7 @@ ui <- fluidPage(
   
   # # Code for just adding tabs
   # navbarPage(
-  #   title = "USGS GW Example App",
+  #   title = "USGS Example App",
   #   tabPanel("Select Data and Plot"),
   #   tabPanel("About")
   # )
