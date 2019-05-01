@@ -11,7 +11,7 @@
 #   to get a smoother transition between each day for a gif.
 # To read raster objects, you need raster & sp packages
 # To create GIFs you need the animation pacakge & ImageMagick installed on your system
-# You can run this code without Imagegick - just skip any of the `saveGIF` functions
+# You can run this code without ImageMagick - just skip any of the `saveGIF` functions
 
 library(raster)
 library(sp)

@@ -6,4 +6,5 @@ Creating some R hype by showing off advanced techniques applied to USGS science.
 * [December 12, 2018] Boxplots
 * [February 13, 2019] Version control using Git and GitHub
 * [February 27, 2019] Shiny
-* [March 27, 2019] (Parallel computing)
+* [March 27, 2019] Parallel computing + some spatial data
+* [May 1, 2019] Spatial data + example of parallel & `caret` package
