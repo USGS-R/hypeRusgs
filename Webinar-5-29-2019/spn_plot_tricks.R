@@ -4,8 +4,8 @@ library(ggplot2)
 
 # First just setting up a generic ggplot
 # Use data that is already built into R
-island_df <- data.frame(Country = names(islands)[1:10], Area = islands[1:10])
-island_plot <- ggplot(island_df, aes(x = Country, y = Area)) +
+island_df <- data.frame(Place = names(islands)[1:10], Area = islands[1:10])
+island_plot <- ggplot(island_df, aes(x = Place, y = Area)) +
   geom_point() + 
   theme_bw()
 island_plot
@@ -22,8 +22,14 @@ island_plot
 # Find math notations in ?plotmath
 
 island_plot + ylab(bquote('Area '('mi '^ 2) )) # superscript
-island_plot + xlab(bquote('Country'[10])) # subscript
-island_plot + ggtitle(bquote('Area by Country '[gamma])) # special character as subscript
+island_plot + xlab(bquote('Place'[10])) # subscript
+island_plot + ggtitle(bquote('Area by Place '[gamma] ~ degree)) # special character as subscript
+
+# Putting all 3 together
+island_plot + 
+  ylab(bquote('Area '('mi '^ 2) )) + # superscript
+  xlab(bquote('Place'[10])) + # subscript
+  ggtitle(bquote('Area by Place '[gamma] ~ degree))
 
 ##### Tick mark placement #####
 
@@ -58,7 +64,6 @@ island_plot + theme(text = element_text(family = "serif"))
 library(showtext) # to get Google fonts
 font_add_google("Poppins", "Poppins")
 font_add_google("Roboto", "Roboto")
-font_add_google("Roboto", "Roboto")
 
 # See fonts available
 font_families()
@@ -84,7 +89,7 @@ island_plot + theme(text = element_text(family = "Roboto"))
 # Set minor/major breaks
 # Similar USGS font
 
-ggplot(island_df, aes(x = Country, y = Area)) +
+ggplot(island_df, aes(x = Place, y = Area)) +
   geom_point() + 
   ylab(bquote('Area '('mi '^ 2) )) + # superscript
   scale_y_continuous(
@@ -99,5 +104,6 @@ ggplot(island_df, aes(x = Country, y = Area)) +
     # Adjust ticks to point in
     axis.ticks.length = unit(-0.15, "cm"),
     axis.text.x = element_text(margin = unit(rep(0.35, 4), "cm")),
-    axis.text.y = element_text(margin = unit(rep(0.35, 4), "cm"))
-    )
+    axis.text.y = element_text(margin = unit(rep(0.35, 4), "cm")),
+    text = element_text(family = "serif")
+  )
