@@ -1,9 +1,9 @@
 # Interpolate between rasters
 library(raster)
 
-grid_100 <- raster("Webinar-7-31-2019/data/PredictionGrids_CV_example/preds_0.5_TD100ft.tif")
-grid_150 <- raster("Webinar-7-31-2019/data/PredictionGrids_CV_example/preds_0.5_TD150ft.tif")
-grid_200 <- raster("Webinar-7-31-2019/data/PredictionGrids_CV_example/preds_0.5_TD200ft.tif")
+grid_100 <- raster("Webinar-7-31-2019/PredictionGrids_CV_example/preds_0.5_TD100ft.tif")
+grid_150 <- raster("Webinar-7-31-2019/PredictionGrids_CV_example/preds_0.5_TD150ft.tif")
+grid_200 <- raster("Webinar-7-31-2019/PredictionGrids_CV_example/preds_0.5_TD200ft.tif")
 
 known_depths <- seq(100, 200, by = 50)
 interp_depths <- seq(100, 200, by = 25)
