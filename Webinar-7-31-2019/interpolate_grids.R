@@ -6,8 +6,7 @@ grid_150 <- raster("Webinar-7-31-2019/PredictionGrids_CV_example/preds_0.5_TD150
 grid_200 <- raster("Webinar-7-31-2019/PredictionGrids_CV_example/preds_0.5_TD200ft.tif")
 
 known_depths <- seq(100, 200, by = 50)
-interp_depths <- seq(100, 200, by = 25)
-
+interp_depths <- seq(100, 200, by = 25) # could easily change to `by = 10`
 
 ### Verifying that this works
 # Found that 10 & 81 had a non-NA value:
