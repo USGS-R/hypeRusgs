@@ -10,3 +10,4 @@ Creating some R hype by showing off advanced techniques applied to USGS science.
 * [May 1, 2019] Spatial data + example of parallel & `caret` package
 * [May 29, 2019] SPN plot tips + reading in multiple files with a loop
 * [June 26, 2019] Packages for 3-D surface elevation plots
+* [July 31, 2019] Linear interpolation of grids/raster + Celia shares 3-D plotting code
